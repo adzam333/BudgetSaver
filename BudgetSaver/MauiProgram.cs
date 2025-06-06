@@ -1,4 +1,6 @@
-﻿namespace BudgetSaver;
+using Microcharts.Maui;
+
+namespace BudgetSaver;
 
 public static class MauiProgram
 {
@@ -14,3 +16,4 @@ public static class MauiProgram
             return builder.Build();
         }
 }
+
