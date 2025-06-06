@@ -1,24 +1,16 @@
-using System.IO;
-using BudgetSaver.Data;
-using BudgetSaver.Services;
-using Microsoft.EntityFrameworkCore;
-using Microsoft.Maui.Storage;
+using Microcharts.Maui;
 
 namespace BudgetSaver;
 
 public static class MauiProgram
 {
-    public static MauiApp CreateMauiApp()
-    {
+        public static MauiApp CreateMauiApp()
+        {
         var builder = MauiApp.CreateBuilder();
         builder
-            .UseMauiApp<App>();
+            .UseMauiApp<App>()
+            .UseMicrocharts();
 
-        var dbPath = Path.Combine(FileSystem.AppDataDirectory, "savings.db");
-        builder.Services.AddDbContext<SavingsDbContext>(options =>
-            options.UseSqlite($"Filename={dbPath}"));
-        builder.Services.AddTransient<SavingsEventService>();
-
-        return builder.Build();
-    }
+            return builder.Build();
+        }
 }
