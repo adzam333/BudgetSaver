@@ -6,4 +6,4 @@ set -e
 
 dotnet workload restore BudgetSaver/BudgetSaver.csproj
 
-dotnet build BudgetSaver/BudgetSaver.csproj -t:Run -f net6.0-android "$@"
+dotnet build BudgetSaver/BudgetSaver.csproj -t:Run -f net8.0-android "$@"
