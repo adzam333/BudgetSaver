@@ -8,6 +8,9 @@ public static class MauiProgram
             builder
                 .UseMauiApp<App>();
 
+            builder.Services.AddSingleton<BudgetSaver.Core.Services.IDataService, BudgetSaver.Core.Services.DataService>();
+            builder.Services.AddTransient<BudgetSaver.Core.ViewModels.CounterViewModel>();
+
             return builder.Build();
         }
 }
