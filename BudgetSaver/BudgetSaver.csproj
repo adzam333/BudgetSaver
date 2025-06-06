@@ -49,4 +49,8 @@
                 <PackageReference Include="Microcharts.Maui" Version="1.0.0" />
         </ItemGroup>
 
+	<ItemGroup>
+	  <ProjectReference Include="..\BudgetSaver.Core\BudgetSaver.Core.csproj" />
+	</ItemGroup>
+
 </Project>
