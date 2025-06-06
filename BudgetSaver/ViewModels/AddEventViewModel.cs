@@ -1,5 +1,6 @@
 using System.Collections.ObjectModel;
 using System.Windows.Input;
+using Microsoft.Maui.Controls;
 using BudgetSaver.Models;
 
 namespace BudgetSaver.ViewModels;
@@ -34,7 +35,14 @@ public class AddEventViewModel : BaseViewModel
     public Event? SelectedEvent
     {
         get => selectedEvent;
-        set => SetProperty(ref selectedEvent, value);
+        set
+        {
+            if (SetProperty(ref selectedEvent, value))
+            {
+                ((Command)EditEventCommand).ChangeCanExecute();
+                ((Command)DeleteEventCommand).ChangeCanExecute();
+            }
+        }
     }
 
     public ICommand AddEventCommand { get; }
