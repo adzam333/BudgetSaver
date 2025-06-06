@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="BudgetSaver.Views.SavingsGoalPage"
+             Title="Savings Goal">
+    <VerticalStackLayout Spacing="10" Padding="20">
+        <Entry Placeholder="Target Amount" Keyboard="Numeric" Text="{Binding TargetAmount}" />
+        <Entry Placeholder="Saved Amount" Keyboard="Numeric" Text="{Binding SavedAmount}" />
+        <Button Text="Save" Command="{Binding SaveCommand}" />
+    </VerticalStackLayout>
+</ContentPage>

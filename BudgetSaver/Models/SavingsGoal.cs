@@ -1,3 +1,4 @@
+
 ﻿namespace BudgetSaver.Models;
 
 public class SavingsGoal

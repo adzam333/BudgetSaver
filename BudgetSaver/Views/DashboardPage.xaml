@@ -3,11 +3,17 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="BudgetSaver.Views.DashboardPage"
              Title="Dashboard">
-    <CollectionView ItemsSource="{Binding UpcomingEvents}">
-        <CollectionView.ItemTemplate>
-            <DataTemplate>
-                <TextCell Text="{Binding Name}" Detail="{Binding Date}" />
-            </DataTemplate>
-        </CollectionView.ItemTemplate>
-    </CollectionView>
+    <VerticalStackLayout Spacing="10" Padding="20">
+        <Label Text="Savings Progress" />
+        <ProgressBar Progress="{Binding GoalProgress}" />
+        <Label Text="{Binding SavedAmount, StringFormat='Saved: {0:C}'}" />
+        <Label Text="{Binding TargetAmount, StringFormat='Goal: {0:C}'}" />
+        <CollectionView ItemsSource="{Binding UpcomingEvents}">
+            <CollectionView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Name}" Detail="{Binding Date}" />
+                </DataTemplate>
+            </CollectionView.ItemTemplate>
+        </CollectionView>
+    </VerticalStackLayout>
 </ContentPage>

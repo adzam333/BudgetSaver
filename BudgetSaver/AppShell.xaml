@@ -23,5 +23,9 @@
         Title="History"
         ContentTemplate="{DataTemplate views:HistoryPage}"
         Route="HistoryPage" />
+    <ShellContent
+        Title="Savings Goal"
+        ContentTemplate="{DataTemplate views:SavingsGoalPage}"
+        Route="SavingsGoalPage" />
 
 </Shell>
